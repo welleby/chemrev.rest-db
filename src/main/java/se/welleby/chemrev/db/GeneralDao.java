@@ -38,7 +38,7 @@ public class GeneralDao {
 	}
 	public Document get(String id) {
 		Document result = getCollection().find(eq("_id",new ObjectId(id))).first();
-		result.put("_id", result.getObjectId("_id").toHexString());
+		//result.put("_id", result.getObjectId("_id").toHexString());
 		System.out.println(result);
 		return result;
 	}
@@ -48,7 +48,7 @@ public class GeneralDao {
 		try {
 			while(cursor.hasNext()) {
 				Document val = cursor.next();
-				val.put("_id", val.getObjectId("_id").toHexString());
+				//val.put("_id", val.getObjectId("_id").toHexString());
 				result.add(val);
 			}
 		} finally {
